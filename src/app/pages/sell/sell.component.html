@@ -1,0 +1,148 @@
+<button nz-button [nzType]="'primary'" (click)="showModal()" class="sell_btn">
+  Start new Auction
+</button>
+<nz-modal
+  [(nzVisible)]="isVisible"
+  nzTitle="Set up your new auction"
+  (nzOnCancel)="handleCancel()"
+  (nzOnOk)="submitForm()"
+>
+  <ng-container *nzModalContent>
+    <form nz-form [formGroup]="newAuctionForm">
+      <nz-form-item>
+        <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired nzFor="name"
+          >Product Name</nz-form-label
+        >
+        <nz-form-control
+          [nzSm]="14"
+          [nzXs]="24"
+          nzErrorTip=""
+          class="form-control"
+        >
+          <input nz-input formControlName="name" id="name" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired nzFor="reserve_price"
+          >Reserve Price</nz-form-label
+        >
+        <nz-form-control
+          [nzSm]="14"
+          [nzXs]="24"
+          nzErrorTip=""
+          class="form-control"
+        >
+          <input nz-input formControlName="reserve_price" id="reserve_price" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label
+          [nzSm]="8"
+          [nzXs]="24"
+          nzFor="bid_pace"
+          nzRequired
+          nzTooltipTitle="What do you want other to call you"
+        >
+          <span>Bid Pace</span>
+        </nz-form-label>
+        <nz-form-control
+          [nzSm]="14"
+          [nzXs]="24"
+          nzErrorTip="Please input your bid_pace!"
+          class="form-control"
+        >
+          <input nz-input id="bid_pace" formControlName="bid_pace" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="8" [nzXs]="24" nzFor="breaking_bid" nzRequired
+          >Breaking Bid</nz-form-label
+        >
+        <nz-form-control
+          [nzSm]="14"
+          [nzXs]="24"
+          nzErrorTip="Please input breaking_bid!"
+          class="form-control"
+        >
+          <input
+            nz-input
+            id="breaking_bid"
+            formControlName="breaking_bid"
+            placeholder="breaking_bid"
+          />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="8" [nzXs]="24" nzFor="description" nzRequired
+          >Description</nz-form-label
+        >
+        <nz-form-control
+          [nzSm]="14"
+          [nzXs]="24"
+          nzErrorTip="Please input description!"
+          class="form-control"
+        >
+          <input
+            nz-input
+            id="description"
+            formControlName="description"
+            placeholder="description"
+          />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="8" [nzXs]="24" nzFor="expiration" nzRequired
+          >Expiration Date</nz-form-label
+        >
+        <nz-form-control
+          [nzSm]="14"
+          [nzXs]="24"
+          nzErrorTip="Please input expiration date!"
+          class="form-control"
+        >
+          <input
+            nz-input
+            id="expiration"
+            formControlName="expiration"
+            placeholder="expiration"
+          />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSm]="8" [nzXs]="24" nzFor="image" nzRequired
+          >Product Image</nz-form-label
+        >
+        <nz-form-control
+          [nzSm]="14"
+          [nzXs]="24"
+          nzErrorTip="Please include product images!"
+          class="form-control"
+        >
+        <div class="clearfix">
+          <nz-upload
+            class="upload-list-inline"
+            nzListType="picture"
+            [(nzFileList)]="fileList2"
+            (nzChange)="changePic($event)"
+          >
+            <button nz-button>
+              <span>
+                <i nz-icon nzType="upload"></i>
+                Upload
+              </span>
+            </button>
+          </nz-upload>
+        </div>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </ng-container>
+</nz-modal>
+<nz-tabset class="selling_items">
+  <nz-tab nzTitle="On-going Auctions">
+    <app-on-going></app-on-going>
+  </nz-tab>
+  <nz-tab nzTitle="Closed Auctions">
+    <app-closed></app-closed>
+  </nz-tab>
+</nz-tabset>

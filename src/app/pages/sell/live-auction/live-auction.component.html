@@ -1,0 +1,86 @@
+<nz-tabset>
+  <nz-tab nzTitle="Description">
+    <div nz-row class="product">
+      <div nz-col nzSpan="12">
+        <img
+          class="product_img"
+          src="../../../../assets/images/file-20210820-25-1j3afhs.avif"
+          alt=""
+        />
+      </div>
+      <div nz-col nzSpan="12">
+        <h4 class="owner_name">
+          owned by:
+          <span> CNSD </span>
+        </h4>
+        <h2 class="product_name">NFT Card Super Vjpr0</h2>
+        <span class="product_highest-bidder">
+          <div nz-row>
+            <div nz-col nzSpan="3">avatar</div>
+            <div nz-col nzSpan="9">
+              <div class="highest-bidder_name">
+                Highest bid by:
+                <span> Florian </span>
+              </div>
+              <span class="highest-bidder_value"> 20k </span>
+            </div>
+          </div>
+        </span>
+        <p class="product_description">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </p>
+        <div nz-row>
+          <div nz-col nzSpan="12">Auction Ending in:</div>
+          <div nz-col nzSpan="12">
+            <div class="pay_options">
+              <button nz-button nzType="primary">Break the bid</button>
+              <br />
+              <button nz-button nzType="primary">Place a bid</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="auction_rules">
+      <h3 class="auction_rules_title">
+        Rules :
+      </h3>
+      <span class="auction_rules_desc">
+        It has survived not only five centuries, but also the leap into
+        electronic typesetting, remaining essentially unchanged. It was
+        popularised in the 1960s with the release of Letraset sheets
+        containing Lorem Ipsum passages, and more recently with desktop
+        publishing software like Aldus PageMaker including versions of Lorem
+        Ipsum
+      </span>
+    </div>
+
+  </nz-tab>
+  <nz-tab nzTitle="Transaction History">
+    <nz-table #sortTable [nzData]="listOfData" nzTableLayout="fixed">
+      <thead>
+        <tr>
+          <th *ngFor="let column of listOfColumn" [nzSortFn]="column.compare" [nzSortPriority]="column.priority">
+            {{ column.title }}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of sortTable.data">
+          <td>{{ data.name }}</td>
+          <td>{{ data.chinese }}</td>
+          <td>{{ data.math }}</td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </nz-tab>
+</nz-tabset>

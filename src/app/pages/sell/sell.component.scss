@@ -1,0 +1,34 @@
+.sell_btn {
+  position: absolute;
+  right: 50px;
+  margin-top: 13px;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.selling_items {
+  position: relative;
+}
+
+form {
+
+  .form-control {
+    margin-left: 10px;
+  }
+
+  :host ::ng-deep .upload-list-inline .ant-upload-list-item {
+    float: left;
+    width: 200px;
+    margin-right: 8px;
+  }
+  :host ::ng-deep .upload-list-inline [class*='-upload-list-rtl'] .ant-upload-list-item {
+    float: right;
+  }
+  :host ::ng-deep .upload-list-inline .ant-upload-animate-enter {
+    animation-name: uploadAnimateInlineIn;
+  }
+  :host ::ng-deep .upload-list-inline .ant-upload-animate-leave {
+    animation-name: uploadAnimateInlineOut;
+  }
+}
+

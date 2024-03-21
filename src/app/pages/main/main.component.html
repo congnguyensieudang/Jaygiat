@@ -1,0 +1,35 @@
+<div class="content">
+  <nz-breadcrumb>
+    <a href="#">
+      <span class="title">Home</span>
+    </a>
+  </nz-breadcrumb>
+  <div class="most-viewed">
+    <nz-carousel nzAutoPlay>
+      <div nz-carousel-content *ngFor="let index of array">
+        <h3>{{ index }}</h3>
+      </div>
+    </nz-carousel>
+  </div>
+  <div class="recent-viewed">
+    <h3>Your Recently Viewed Items</h3>
+    <div nz-row>
+      <div nz-col nzSpan="6">col-6</div>
+      <div nz-col nzSpan="6">col-6</div>
+      <div nz-col nzSpan="6">col-6</div>
+      <div nz-col nzSpan="6">col-6</div>
+    </div>
+  </div>
+  <div class="todays-deals">
+    <div class="todays-deals_items">
+      <h3>
+        Explore the newest items on the market right now
+      </h3>
+      <nz-carousel nzAutoPlay>
+        <div nz-carousel-content *ngFor="let index of array3">
+          <h3>{{ index }}</h3>
+        </div>
+      </nz-carousel>
+    </div>
+  </div>
+</div>

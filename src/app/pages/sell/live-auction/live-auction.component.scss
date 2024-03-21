@@ -1,0 +1,53 @@
+.product {
+  color: #474747;
+  .product_img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .owner_name {
+
+  }
+
+  .product_name {
+
+
+  }
+
+  .product_highest-bidder {
+
+    .highest-bidder_name {
+
+      span {
+        color: #000;
+        font-weight: 500;
+        font-size: 16px;
+      }
+    }
+
+    .highest-bidder_value {
+
+    }
+  }
+
+  .pay_options {
+
+    button {
+      margin-bottom: 10px;
+      width: 115px;
+      border-radius: 20px;
+      height: 40px;
+    }
+  }
+
+}
+.auction_rules {
+  border: 1px solid #e3e3e3;
+  padding: 10px;
+  border-radius: 10px;
+
+  .auction_rules_title {
+    text-align: center;
+    font-style: italic
+  }
+}
